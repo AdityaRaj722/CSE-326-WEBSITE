@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.container {
+  padding: 16px;
+  background-color: white;
+}
+
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.fix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .homebtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+  }
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+
+a {
+  color: dodgerblue;
+}
+
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+<script>
+  function check()
+  {
+  var a=document.getElementById("t1").value;
+  var b=document.getElementById("t2").value;
+  var c=document.getElementById("t3").value;
+  var d=document.getElementById("t4").value;
+  var e=document.getElementById("t5").value;
+  atpos = b.indexOf("@");
+dotpos = b.lastIndexOf(".");
+  if(a=="" || b=="" || c=="" || d=="" || e=="" )
+  {alert("please enter all feilds");}
+  else if(isNaN(c) || c.length!=10)
+  {alert("Please enter a valid mobile number");}
+  else if(d.length<8){
+    alert('password should be minimum 8 characters');
+    
+  }
+  
+  
+  else if (atpos < 1 || ( dotpos - atpos < 3 ))
+{
+alert("Please enter correct email ID");
+}
+else if(d!=e){
+    alert ("password does not match")
+  }
+ else
+ {
+   alert("you have been registered")
+ }
+ 
+  }
+  </script>
+</head>
+<body>
+
+<form >
+  <div class="container">
+    <h1>Register</h1>
+    <p>Register yourself to get latest information about resources.</p>
+    <hr>
+    <label for="username"><b>Username</b></label>
+    <input type="text" id="t1" placeholder="Username" name="name" id="name" >
+
+    <label for="mobile number"><b>Mobile number</b></label>
+    <input type="text" id="t3" placeholder="Mobile Number" name="number" id="number" >
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" id="t2" placeholder="Enter Email" name="email" id="email" >
+
+    <label for="psw"><b>Password</b></label>
+    <input type="text" id="t4" placeholder="Enter Password" name="psw" id="psw" >
+ 
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" id="t5" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" >
+    <hr>
+    
+    <div class="fix">
+    <button id="t6" style="width: 30%;" onclick="check()" type="button" class="registerbtn">Register</button>
+    <a href="index.html"> <button  type="button" class="homebtn">Return to homepage</button></a>
+  </div>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="login.html">Login</a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
